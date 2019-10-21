@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post render 1`] = `
+<div
+  className="ant-card ant-card-bordered ant-card-hoverable"
+  style={
+    Object {
+      "width": 240,
+    }
+  }
+>
+  <div
+    className="ant-card-cover"
+  >
+    <img
+      alt="example"
+      src="My article title"
+    />
+  </div>
+  <div
+    className="ant-card-body"
+    style={Object {}}
+  >
+    <div
+      className="ant-card-meta"
+    >
+      <div
+        className="ant-card-meta-avatar"
+      >
+        <span
+          className="ant-avatar ant-avatar-circle ant-avatar-image"
+          style={Object {}}
+        >
+          <img
+            onError={[Function]}
+            src="Hello World"
+          />
+        </span>
+      </div>
+      <div
+        className="ant-card-meta-detail"
+      >
+        <div
+          className="ant-card-meta-description"
+        >
+          Hello World
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
