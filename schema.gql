@@ -70,10 +70,32 @@ type User implements Node {
   avatar: String!
 }
 
+type UserEdges implements Edges {
+  node: User!
+  cursor: ID!
+}
+
+type UserConnection implements Connection {
+  totalCount: Int!
+  edges: [User!]
+  pageInfo: PageInfo
+}
+
 type Comment implements Node {
   id: ID!
   content: String!
   author: User!
+}
+
+type CommentEdges implements Edges {
+  node: Comment!
+  cursor: ID!
+}
+
+type CommentConnection implements Connection {
+  totalCount: Int!
+  edges: [CommentEdges!]
+  pageInfo: PageInfo
 }
 
 type Post implements Node {
@@ -81,7 +103,8 @@ type Post implements Node {
   caption: String
   image: Url
   author: User!
-  comments: [Comment!]
+  comments: CommentConnection
+  likes: UserConnection
 }
 
 type PostEdges implements Edges {
