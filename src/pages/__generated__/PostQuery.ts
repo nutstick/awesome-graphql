@@ -8,6 +8,7 @@
 
 export interface PostQuery_posts_edges_node_author {
   __typename: "User";
+  id: string;
   avatar: string;
   username: string;
 }

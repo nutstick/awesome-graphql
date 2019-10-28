@@ -8,6 +8,7 @@
 
 export interface PostFields_author {
   __typename: "User";
+  id: string;
   avatar: string;
   username: string;
 }

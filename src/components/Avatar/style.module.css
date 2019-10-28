@@ -1,0 +1,14 @@
+.root {
+  overflow: hidden;
+  border-radius: 25%;
+  position: relative;
+  background: #dcdcdc;
+}
+
+.img {
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
