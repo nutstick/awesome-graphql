@@ -1,4 +1,4 @@
-name: Pull Request
+name: CI
 on: [pull_request]
 jobs:
   lint:
@@ -7,4 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: GraphQL Inspector
-        uses: kamilkisiela/graphql-inspector@v1.25.0
+        uses: nutstick/graphql-inspector-action@v0.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          check_name: GraphQL Inspector Validate

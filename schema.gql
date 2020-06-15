@@ -1,4 +1,5 @@
 scalar Url
+scalar DateTime
 
 """
 Information about pagination in a connection.
@@ -85,6 +86,8 @@ type Comment implements Node {
   id: ID!
   content: String!
   author: User!
+  likes: UserConnection!
+  createAt: DateTime!
 }
 
 type CommentEdges implements Edges {
@@ -103,8 +106,8 @@ type Post implements Node {
   caption: String
   image: Url
   author: User!
-  comments: CommentConnection
-  likes: UserConnection
+  comments: CommentConnection!
+  likes: UserConnection!
 }
 
 type PostEdges implements Edges {
@@ -119,6 +122,5 @@ type PostConnection implements Connection {
 }
 
 type Query {
-  helloworld: String!
-  posts: PostConnection
+  posts: PostConnection!
 }
