@@ -1,6 +1,8 @@
 .root {
-  padding: 36px;
+  padding: 18px 18px 0;
   zoom: 1;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
 }
 
 .header {
@@ -27,7 +29,7 @@
 
 .imageContainer {
   margin: 20px 0;
-  border-radius: 36px;
+  border-radius: 8px;
   overflow: hidden;
   width: 100%;
   padding-top: 100%;
@@ -45,8 +47,13 @@
 }
 
 .caption {
-  margin: 12px 0;
+  margin: 1rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 16px;
+  display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 
 .acctionContainer {

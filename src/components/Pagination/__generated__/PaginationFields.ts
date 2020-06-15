@@ -4,11 +4,10 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: UserAvatarFields
+// GraphQL fragment: PaginationFields
 // ====================================================
 
-export interface UserAvatarFields {
-  __typename: "User";
-  avatar: string;
-  username: string;
+export interface PaginationFields {
+  __typename: "PostConnection" | "CommentConnection" | "UserConnection";
+  totalCount: number;
 }

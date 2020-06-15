@@ -1,17 +1,17 @@
 import React from 'react';
 import faker from 'faker';
-// @ts-ignore
 import { toInlineFragment } from 'fraql';
 import mocker from '../../apollo/mocker';
 import { Post } from './index';
+import { PostFragments } from './fragments';
 import { PostFields } from './__generated__/PostFields';
 
 export default {
   title: 'Post',
 };
 
-export const text = () => {
-  const inlineFragment = toInlineFragment(Post.fragments.fields);
+export const post = (): React.ReactNode => {
+  const inlineFragment = toInlineFragment(PostFragments.fields);
   const data = mocker.mockFragment<PostFields>(inlineFragment, {
     mocks: {
       Post: () => ({
@@ -24,5 +24,9 @@ export const text = () => {
       }),
     },
   });
-  return <Post {...data} index={0} />;
+  return (
+    <div style={{ width: 340, padding: 16 }}>
+      <Post {...data} index={0} />
+    </div>
+  );
 };

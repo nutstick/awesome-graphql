@@ -1,6 +1,5 @@
 import React from 'react';
 import { Layout as AntLayout } from 'antd';
-import s from './style.module.css';
 
 const Layout: React.SFC = ({ children }) => {
   return (

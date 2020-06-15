@@ -1,5 +1,10 @@
 declare module 'fraql' {
   function gql(literals: any, ...placeholders: any[]): any;
+
+  export function toInlineFragment(
+    fragment: import('graphql').DocumentsNode,
+  ): import('graphql').DocumentsNode;
+
   export default gql;
 }
 
@@ -15,7 +20,10 @@ declare module 'fraql/mock' {
   class Mocker {
     constructor(schema: any, options: Options = {});
     mockSchema(options: Options = {}): any;
-    mockFragment<T>(fragmentDocument: any, options: Options = {}): T;
+    mockFragment<T>(
+      fragmentDocument: import('graphql').DocumentNode,
+      options: Options = {},
+    ): T;
     mockFragments(
       fragmentDocuments: Documents,
       options: Options = {},

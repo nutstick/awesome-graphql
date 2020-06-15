@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -13,16 +14,14 @@ export interface PostFields_author {
   username: string;
 }
 
-export interface PostFields_comments_author {
-  __typename: "User";
-  avatar: string;
+export interface PostFields_comments {
+  __typename: "CommentConnection";
+  totalCount: number;
 }
 
-export interface PostFields_comments {
-  __typename: "Comment";
-  id: string;
-  author: PostFields_comments_author;
-  content: string;
+export interface PostFields_likes {
+  __typename: "UserConnection";
+  totalCount: number;
 }
 
 export interface PostFields {
@@ -30,5 +29,6 @@ export interface PostFields {
   author: PostFields_author;
   image: any | null;
   caption: string | null;
-  comments: PostFields_comments[] | null;
+  comments: PostFields_comments | null;
+  likes: PostFields_likes | null;
 }

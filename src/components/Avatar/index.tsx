@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
-import gql from 'graphql-tag';
 import { UserAvatarFields } from './__generated__/UserAvatarFields';
-import s from './style.module.css';
-
-const fragments = {
-  fields: gql`
-    fragment UserAvatarFields on User {
-      avatar
-      username
-    }
-  `,
-};
+import s from './s.module.css';
 
 export interface Props extends Partial<UserAvatarFields> {
   size: number | string;
 }
 
-export const Avatar = ({ avatar, username, size }: Props) => {
+export const Avatar: React.FC<Props> = ({ avatar, username, size }) => {
   const [error, setError] = useState(false);
   const onError = () => {
     setError(true);
@@ -35,5 +25,3 @@ export const Avatar = ({ avatar, username, size }: Props) => {
     </div>
   );
 };
-
-Avatar.fragments = fragments;

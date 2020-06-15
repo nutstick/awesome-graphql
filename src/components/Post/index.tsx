@@ -1,36 +1,14 @@
 import React from 'react';
 import { Card, Icon } from 'antd';
 import { Avatar } from '../Avatar';
-import gql from 'graphql-tag';
 import { PostFields } from './__generated__/PostFields';
-import s from './style.module.css';
-
-const fragments = {
-  fields: gql`
-    fragment PostFields on Post {
-      author {
-        id
-        ...UserAvatarFields
-      }
-      image
-      caption
-      comments {
-        id
-        author {
-          avatar
-        }
-        content
-      }
-    }
-    ${Avatar.fragments.fields}
-  `,
-};
+import s from './s.module.css';
 
 export interface Props extends PostFields {
   index: number;
 }
 
-export const Post = ({ caption, image, author }: Props) => {
+export const Post: React.FC<Props> = ({ caption, image, author }: Props) => {
   return (
     <div className={s.root}>
       <div className={s.header}>
@@ -57,5 +35,3 @@ export const Post = ({ caption, image, author }: Props) => {
     </div>
   );
 };
-
-Post.fragments = fragments;
